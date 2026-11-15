@@ -75,6 +75,19 @@ footer{font:400 12px/1.6 var(--mono);color:var(--soft);padding:8px 0 56px}
 }
 @media (max-width:480px){.block b{font-size:21px} .block div{padding:12px}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+/* ---- contact button ---- */
+.contact{position:relative;display:inline-block;margin-top:22px}
+.contact summary{list-style:none;cursor:pointer;font:500 13px/1 var(--mono);background:var(--ink);color:var(--card);border:1.5px solid var(--ink);padding:11px 16px;user-select:none}
+.contact summary::-webkit-details-marker{display:none}
+.contact summary::after{content:" +"}
+.contact[open] summary::after{content:" \2212"}
+.contact summary:hover{background:var(--accent);border-color:var(--accent)}
+.contact ul{position:absolute;z-index:10;left:0;top:calc(100% + 6px);min-width:340px;margin:0;padding:0;list-style:none;background:var(--card);border:1.5px solid var(--ink);box-shadow:6px 6px 0 var(--line)}
+.contact li+li{border-top:1px solid var(--line)}
+.contact a{display:block;padding:12px 16px;text-decoration:none}
+.contact a:hover{background:var(--ink);color:var(--card)}
+.contact a b{display:block;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.contact a span{font:400 13px/1.3 var(--mono);word-break:break-all}
 </style>
 </head>
 <body>
@@ -84,17 +97,45 @@ footer{font:400 12px/1.6 var(--mono);color:var(--soft);padding:8px 0 56px}
       <p class="kicker">Engineering portfolio / Civil &amp; structural engineering</p>
       <h1>Edwin Maldonado</h1>
       <p class="intro">Selected project work from the University of Florida: structural analysis and design, deep foundations, construction planning, and coastal and wind engineering. Each entry states the result first, then the problem and how it was solved.</p>
+      <details class="contact">
+        <summary>Contact</summary>
+        <ul>
+          <li><a href="mailto:edwinmg103@outlook.com"><b>Email</b><span>edwinmg103@outlook.com</span></a></li>
+          <li><a href="https://www.linkedin.com/in/edwin-ivan-maldonado/" target="_blank" rel="noopener"><b>LinkedIn</b><span>linkedin.com/in/edwin-ivan-maldonado</span></a></li>
+          <li><a href="https://orcid.org/0009-0004-5745-4318" target="_blank" rel="noopener"><b>ORCID</b><span>0009-0004-5745-4318</span></a></li>
+        </ul>
+      </details>
       
     </div>
     <div class="block">
-      <div><b>13</b><span>Projects</span></div>
+      <div><b>14</b><span>Projects</span></div>
       <div><b>5</b><span>Disciplines</span></div>
       <div><b>2021&ndash;2026</b><span>University of Florida</span></div>
     </div>
   </div>
 </header>
-<nav aria-label="Filter projects"><div class="wrap"><button type="button" data-f="all" aria-pressed="true">All work</button><button type="button" data-f="structural" aria-pressed="false">Structural</button><button type="button" data-f="geotechnical" aria-pressed="false">Geotechnical</button><button type="button" data-f="construction" aria-pressed="false">Construction</button><button type="button" data-f="coastal" aria-pressed="false">Coastal &amp; wind</button><button type="button" data-f="drafting" aria-pressed="false">Drafting</button></div></nav>
+<nav aria-label="Filter projects"><div class="wrap"><button type="button" data-f="all" aria-pressed="true">All work</button><button type="button" data-f="research" aria-pressed="false">Research</button><button type="button" data-f="structural" aria-pressed="false">Structural</button><button type="button" data-f="geotechnical" aria-pressed="false">Geotechnical</button><button type="button" data-f="construction" aria-pressed="false">Construction</button><button type="button" data-f="coastal" aria-pressed="false">Coastal &amp; wind</button><button type="button" data-f="drafting" aria-pressed="false">Drafting</button></div></nav>
 <main class="wrap">
+<article class="sheet" id="first-floor-heights" data-cat="research">
+  <div class="no" aria-hidden="true">R1</div>
+  <div class="figs"><div class="plate"><span class="big">0.28 m</span><span class="cap">mean absolute error in predicted first-floor height, checked against Florida elevation certificates</span></div></div>
+  <div class="head">
+    <p class="meta">Peer-reviewed publication <i>/</i> Journal of Computing in Civil Engineering, 2026 <i>/</i> Co-author</p>
+    <h2>Estimating first-floor heights of houses from Street View imagery</h2>
+    <p class="xyz"><span class="lbl">Result</span>Predicted the first-floor elevation of coastal houses to within a mean absolute error of <b>0.28 m</b> (Florida) and <b>0.31 m</b> (Virginia) against elevation certificates, by developing object-detection models on Google Street View imagery, work published in a <b>peer-reviewed journal</b>.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>Undergraduate research (2023 to 2024) with the UF Engineering School of Sustainable Infrastructure and Environment on uncertainty quantification of machine learning for damage prediction. Published as Klepac, S., Maldonado, E., Subgranon, A., and Olabarrieta, M. (2026), &ldquo;Estimating First-Floor Heights of Residential Houses from Google Street View Imagery Using Object Detection,&rdquo; <i>Journal of Computing in Civil Engineering</i>, 40(4).</dd></div>
+      <div><dt>Problem</dt><dd>Flood damage models need the height of each building's first floor above ground, but that figure normally comes from elevation certificates that most houses do not have and that are costly to survey.</dd></div>
+      <div><dt>Solution</dt><dd>Collected, cleaned and annotated large image datasets, trained and validated region-based object detectors (Cascade R-CNN and Faster R-CNN in Detectron2), and compared predicted heights with surveyed certificates in two states. Contributed to conceptualization, data curation, formal analysis, investigation, methodology and manuscript review.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Python</li><li>PyTorch / Detectron2</li><li>Object detection</li><li>LabelImg</li></ul>
+      <a class="doc" href="https://doi.org/10.1061/JCCEE5.CPENG-6883" target="_blank" rel="noopener">Journal article (DOI) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
 <article class="sheet" id="champlain" data-cat="structural">
   <div class="no" aria-hidden="true">01</div>
   <div class="figs"><a class="fig" href="img/collar.jpg"><img src="img/collar.jpg" alt="Shear Collar Reinforcement Placement Drawing for Column K/13.1" loading="lazy"></a></div>
