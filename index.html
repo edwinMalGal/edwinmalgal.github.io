@@ -406,6 +406,8 @@ footer{font:400 12px/1.6 var(--mono);color:var(--soft);padding:8px 0 56px}
     btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
     sheets.forEach(function(s){s.hidden=!(f==='all'||s.dataset.cat.split(' ').indexOf(f)>-1)});
   })});
+  // Open every document button in a new tab.   <-- NEW
+  document.querySelectorAll('a.doc').forEach(function(a){a.target='_blank';a.rel='noopener';});
   // If a linked document is not hosted alongside the page, show that instead of a dead link.
   document.querySelectorAll('a[data-doc]').forEach(function(a){
     fetch(a.getAttribute('href'),{method:'HEAD'}).then(function(r){if(!r.ok)throw 0}).catch(function(){
