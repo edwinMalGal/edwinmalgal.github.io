@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edwin Maldonado | Engineering Portfolio</title>
+<meta name="description" content="Engineering portfolio of Edwin Maldonado: structural, geotechnical, construction and coastal project work.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f3f0e8;--card:#fbfaf6;--ink:#15233b;--soft:#4a566b;--line:#15233b26;--hair:#15233b14;--accent:#bf4a17;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;--sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;--disp:"Archivo","IBM Plex Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:linear-gradient(var(--hair) 1px,transparent 1px),linear-gradient(90deg,var(--hair) 1px,transparent 1px);background-size:32px 32px}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+header{padding:56px 0 28px}
+.title{border:1.5px solid var(--ink);background:var(--card);display:grid;grid-template-columns:1fr auto}
+.title .main{padding:32px 32px 28px}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+h1{font:800 clamp(40px,7vw,76px)/.95 var(--disp);font-stretch:112%;letter-spacing:-.02em;margin:0 0 18px}
+.intro{max-width:60ch;margin:0;color:var(--soft);font-size:17px}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.links a{font:500 13px/1 var(--mono);text-decoration:none;border:1.5px solid var(--ink);padding:10px 14px}
+.links a:hover{background:var(--ink);color:var(--card)}
+.block{border-left:1.5px solid var(--ink);display:grid;grid-template-rows:repeat(3,1fr);min-width:210px}
+.block div{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;justify-content:center}
+.block div:last-child{border-bottom:0}
+.block b{font:700 26px/1.1 var(--disp)}
+.block span{font:400 11px/1.3 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--soft);margin-top:4px}
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1.5px solid var(--ink);margin-bottom:28px}
+nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:12px;padding-bottom:12px}
+nav button{font:500 12.5px/1 var(--mono);letter-spacing:.04em;white-space:nowrap;padding:9px 13px;border:1.5px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}
+nav button:hover{border-color:var(--ink)}
+nav button[aria-pressed="true"]{background:var(--ink);color:var(--card);border-color:var(--ink)}
+.sheet{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);background:var(--card);border:1.5px solid var(--ink);margin-bottom:28px;scroll-margin-top:72px}
+.sheet[hidden]{display:none}
+.no{position:absolute;top:0;right:0;font:500 12px/1 var(--mono);padding:9px 12px;border-left:1.5px solid var(--ink);border-bottom:1.5px solid var(--ink);background:var(--card)}
+.figs{border-right:1.5px solid var(--ink);background:#fff;display:grid;grid-template-columns:1fr 1fr;align-content:center}
+.fig{grid-column:1/-1;display:block}
+.fig.small{grid-column:auto;border-top:1px solid var(--line)}
+.fig img{display:block;width:100%;height:auto}
+.plate{grid-column:1/-1;min-height:260px;height:100%;padding:28px;display:flex;flex-direction:column;justify-content:center;background:var(--ink);color:var(--card);
+  background-image:linear-gradient(#ffffff12 1px,transparent 1px),linear-gradient(90deg,#ffffff12 1px,transparent 1px);background-size:24px 24px}
+.figs:has(.plate){display:block;background:var(--ink)}
+.plate .big{font:800 clamp(64px,9vw,104px)/.9 var(--disp);font-stretch:115%;letter-spacing:-.03em}
+.plate .cap{font:400 13px/1.5 var(--mono);margin-top:16px;max-width:30ch;opacity:.85}
+.head{padding:26px 30px 24px;align-self:center}
+.body{grid-column:1/-1;border-top:1.5px solid var(--ink);padding:6px 30px 22px}
+.meta{font:400 11.5px/1.5 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:var(--soft);margin:0 44px 10px 0}
+.meta i{font-style:normal;color:var(--accent);padding:0 3px}
+h2{font:700 clamp(23px,2.6vw,30px)/1.12 var(--disp);letter-spacing:-.01em;margin:0 0 16px;text-wrap:balance}
+.xyz{margin:0;padding:14px 16px 15px;border-left:4px solid var(--accent);background:#bf4a170f;font-size:16.5px;line-height:1.55}
+.xyz .lbl{display:block;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.xyz b{font-weight:600}
+dl{margin:0;display:grid;grid-template-columns:repeat(3,1fr);gap:0 28px}
+dl div{padding-top:16px}
+dt{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+dd{margin:0;font-size:15px;line-height:1.6}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px;margin-top:20px;border-top:1px solid var(--line);padding-top:16px}
+.tools{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.tools li{font:400 11.5px/1 var(--mono);padding:6px 8px;border:1px solid var(--line)}
+.doc{font:500 13px/1 var(--mono);text-decoration:none;background:var(--ink);color:var(--card);padding:11px 14px;white-space:nowrap}
+.doc:hover{background:var(--accent)}
+.doc.off{background:transparent;color:var(--soft);border:1px dashed var(--line);pointer-events:none}
+footer{font:400 12px/1.6 var(--mono);color:var(--soft);padding:8px 0 56px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (max-width:820px){
+  .title{grid-template-columns:1fr} .block{border-left:0;border-top:1.5px solid var(--ink);grid-template-rows:none;grid-template-columns:repeat(3,1fr)}
+  .block div{border-bottom:0;border-right:1px solid var(--line)} .block div:last-child{border-right:0}
+  .sheet{grid-template-columns:1fr} .figs{border-right:0;border-bottom:1.5px solid var(--ink)} .plate{min-height:200px}
+  .title .main,.head{padding:22px 20px} .body{padding:4px 20px 20px} dl{grid-template-columns:1fr} header{padding-top:28px}
+}
+@media (max-width:480px){.block b{font-size:21px} .block div{padding:12px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="title">
+    <div class="main">
+      <p class="kicker">Engineering portfolio / Civil &amp; structural engineering</p>
+      <h1>Edwin Maldonado</h1>
+      <p class="intro">Selected project work from the University of Florida: structural analysis and design, deep foundations, construction planning, and coastal and wind engineering. Each entry states the result first, then the problem and how it was solved.</p>
+      
+    </div>
+    <div class="block">
+      <div><b>13</b><span>Projects</span></div>
+      <div><b>5</b><span>Disciplines</span></div>
+      <div><b>2021&ndash;2026</b><span>University of Florida</span></div>
+    </div>
+  </div>
+</header>
+<nav aria-label="Filter projects"><div class="wrap"><button type="button" data-f="all" aria-pressed="true">All work</button><button type="button" data-f="structural" aria-pressed="false">Structural</button><button type="button" data-f="geotechnical" aria-pressed="false">Geotechnical</button><button type="button" data-f="construction" aria-pressed="false">Construction</button><button type="button" data-f="coastal" aria-pressed="false">Coastal &amp; wind</button><button type="button" data-f="drafting" aria-pressed="false">Drafting</button></div></nav>
+<main class="wrap">
+<article class="sheet" id="champlain" data-cat="structural">
+  <div class="no" aria-hidden="true">01</div>
+  <div class="figs"><a class="fig" href="img/collar.jpg"><img src="img/collar.jpg" alt="Shear Collar Reinforcement Placement Drawing for Column K/13.1" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CES 6165 · Concrete Structural Rehabilitation <i>/</i> Spring 2026 <i>/</i> Individual report</p>
+    <h2>Champlain Towers South: shear collar repair design</h2>
+    <p class="xyz"><span class="lbl">Result</span>Cut the punching-shear demand-to-capacity ratio at the critical pool-deck column from <b>1.74 to 0.81</b>, a <b>115% gain</b> in design capacity (108.9 to 234.4 kip), by designing a 40-inch circularly reinforced concrete shear collar and an ACI 562-21 rehabilitation plan.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A 43-page forensic and repair study of the 2021 partial collapse of the 12-story Champlain Towers South condominium in Surfside, Florida, built on the published NIST and WJE investigations.</dd></div>
+      <div><dt>Problem</dt><dd>The flat-plate pool deck had no shear reinforcement and was under-designed for punching shear from the start (as-designed ratio 1.38). Top bars placed with 2 in. of cover instead of the specified 3/4 in. pushed the as-built ratio to 1.74, and visible warning signs were not acted on.</dd></div>
+      <div><dt>Solution</dt><dd>Recalculated punching shear with unbalanced moment transfer for the as-designed and as-built conditions, then sized a collar with three No. 5 hoops and twelve No. 3 ties using the Klein and Gouwens method. Wrote a six-step installation sequence that works from the garage below, and mapped the repair to the assessment, design, durability and QA chapters of ACI 562-21.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>ACI 318-25</li><li>ACI 562-21</li><li>Punching shear</li><li>Repair detailing</li></ul>
+      <a class="doc" href="files/ces6165-champlain-towers-shear-collar.pdf" data-doc>Report (43 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="capstone" data-cat="structural construction">
+  <div class="no" aria-hidden="true">02</div>
+  <div class="figs"><a class="fig" href="img/capstone.jpg"><img src="img/capstone.jpg" alt="East elevation of the proposed operations building" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">Senior capstone design <i>/</i> Spring 2024 <i>/</i> Project manager · team of 7</p>
+    <h2>UF wastewater plant: operations building and sludge holding tanks</h2>
+    <p class="xyz"><span class="lbl">Result</span>Led a <b>seven-person</b> design-build team that delivered a <b>27-page</b> qualifications response, two client presentations and structural drawings for <b>two facilities</b>, by coordinating structural, construction and geotechnical sub-teams and running QA/QC on their work.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A design-build proposal for a Campus Operations Building and Aerated Sludge Holding Tanks at the University of Florida wastewater treatment plant, prepared by a simulated firm formed for the capstone course.</dd></div>
+      <div><dt>Problem</dt><dd>The plant needed a central control building for its sludge-handling process and a holding tank to reduce biosolid odors on campus. The team had to show it could deliver both under one design-build contract with minimal disruption to campus.</dd></div>
+      <div><dt>Solution</dt><dd>Organized the team into three sub-teams, acted as the link between them, and contributed structural calculations. The package covered a foundation plan, second-floor framing plan, sections and elevation for the building, plans and sections for the tanks, plus BIM, site safety and sustainability approaches. Phase II added a failure case study of the 2018 FIU pedestrian bridge collapse.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Project management</li><li>Design-build</li><li>AutoCAD / Revit drawings</li><li>QA/QC</li></ul>
+      <a class="doc" href="files/capstone-ops-building-sludge-tank-drawings.pdf" data-doc>Drawings (8 sheets) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="pier58" data-cat="geotechnical structural">
+  <div class="no" aria-hidden="true">03</div>
+  <div class="figs"><a class="fig" href="img/pier.jpg"><img src="img/pier.jpg" alt="FB-MultiPier drilled shaft profile and layout" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CEG 6117 · Deep foundations <i>/</i> Project manager · team of 5</p>
+    <h2>SR-20 Apalachicola River bridge: Pier 58 foundation alternatives</h2>
+    <p class="xyz"><span class="lbl">Result</span>Compared two deep-foundation designs for a river bridge pier and recommended six 72-inch drilled shafts (demand/capacity <b>0.39</b>) over 24 battered driven piles (<b>0.955</b>) despite a <b>$251k</b> higher estimate, by managing a five-person team and modeling the driven-pile option in FB-MultiPier.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>Analysis and design of the foundation for Pier 58 of the SR-20 bridge between Blountstown and Bristol, Florida, to FDOT and AASHTO requirements.</dd></div>
+      <div><dt>Problem</dt><dd>The pier sits in the river on dense sand over limestone. The foundation had to carry the pier loads within displacement limits, be drivable with hammer energy capped at 150 kip-ft because of a neighboring bridge, and make sense on cost and constructability.</dd></div>
+      <div><dt>Solution</dt><dd>The team built the soil profile, got axial capacities from FB-Deep, checked drivability in GRLWEAP (APE 15-4 hammer, 36 to 88 blows per foot, stresses within FDOT 455), modeled both pile groups in FB-MultiPier, designed the caps, and priced each option with FDOT bridge cost data ($1.73M driven piles, $1.99M drilled shafts). Shafts were recommended for capacity margin, scour resistance and a smaller cofferdam.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>FB-MultiPier</li><li>FB-Deep</li><li>GRLWEAP</li><li>FDOT / AASHTO</li></ul>
+      <a class="doc" href="files/ceg6117-pier-58-deep-foundations.pdf" data-doc>Report (23 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="seismic" data-cat="structural">
+  <div class="no" aria-hidden="true">04</div>
+  <div class="figs"><a class="fig" href="img/seismic.jpg"><img src="img/seismic.jpg" alt="Multi-period seismic design spectrum for the site" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CES 6108 · Structural dynamics <i>/</i> Spring 2025 <i>/</i> Individual project</p>
+    <h2>Seismic member selection for a steel warehouse</h2>
+    <p class="xyz"><span class="lbl">Result</span>Selected HP12X84 columns with HP10X57 beams for a Northern California warehouse, holding member stress under <b>80% of yield</b> (28.8 ksi) in both directions, by building a spreadsheet that screened <b>22 HP sections</b> against the ASCE 7-22 multi-period design spectrum.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>Seismic design and member selection for a Risk Category II data-storage warehouse on stiff soil, framed with A36 steel HP shapes and fixed beam-column connections.</dd></div>
+      <div><dt>Problem</dt><dd>Pick the most economical column and beam sections that keep stresses acceptable under earthquake loading in both the short and long directions, when the load itself depends on the stiffness and period of the sections chosen.</dd></div>
+      <div><dt>Solution</dt><dd>Pulled the site spectrum from the ASCE 7-22 Hazard Tool, then for each candidate section computed frame stiffness, natural period, spectral acceleration, equivalent lateral force, overturning moment and column stress. Oriented columns so the two directions had similar periods. The long direction governed.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>ASCE 7-22</li><li>Excel</li><li>Response spectrum</li><li>AISC shapes</li></ul>
+      <a class="doc" href="files/ces6108-seismic-warehouse-design.pdf" data-doc>Report (10 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="scour" data-cat="coastal">
+  <div class="no" aria-hidden="true">05</div>
+  <div class="figs"><a class="fig" href="img/scour.jpg"><img src="img/scour.jpg" alt="Predicted versus measured scour depth scatter plot for HEC-18" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CGN 6905 · Scour and erosion in coastal environments <i>/</i> Spring 2026 <i>/</i> Individual project</p>
+    <h2>Do scour equations hold up at real offshore wind farms?</h2>
+    <p class="xyz"><span class="lbl">Result</span>Showed that <b>five</b> standard scour equations all give a negative R² against field measurements at <b>311</b> offshore wind monopiles, and that the DNV equation predicts <b>zero scour</b> at every one, by running each equation on a public dataset from six British wind farms and flagging every prediction made outside its validated range.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A comparison of five empirical scour-depth equations (Sumer and Fredsøe, DNV, Rudolph and Bos, Qi and Gao, HEC-18) against measured scour around monopile foundations on sandy seabeds.</dd></div>
+      <div><dt>Problem</dt><dd>Monopile foundations are designed with equations calibrated on small laboratory piles. It was unclear how well they predict scour at full-scale turbines, or how often they are being used outside the conditions they were validated for.</dd></div>
+      <div><dt>Solution</dt><dd>Filtered the Garcia et al. (2025) dataset to fine and medium sand sites, derived the wave and current parameters for each turbine, applied all five equations, and compared bias, RMSE, MAE and R² for in-range and out-of-range cases. Only 0 to 70% of turbines fell inside each equation's validated range. HEC-18 fit best, but only because the sites are current-dominated.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Data analysis</li><li>Empirical scour models</li><li>Error statistics</li></ul>
+      <a class="doc" href="files/cgn6905-scour-equation-comparison.pdf" data-doc>Slides (22) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="blast" data-cat="structural">
+  <div class="no" aria-hidden="true">06</div>
+  <div class="figs"><div class="plate"><span class="big">32%</span><span class="cap">of theoretical moment capacity is all a poorly detailed corner joint may reach</span></div></div>
+  <div class="head">
+    <p class="meta">CES 6588 · Protective structures <i>/</i> Co-author · team of 8</p>
+    <h2>Blast-resistant concrete corner joints: closing a gap in UFC 3-340-02</h2>
+    <p class="xyz"><span class="lbl">Result</span>Co-authored a <b>ten-step</b> design procedure and a draft replacement code section for corner joints in blast-resistant concrete, addressing joints that can fail at <b>32%</b> of theoretical moment capacity, by reviewing four decades of research against UFC 3-340-02.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A 29-page research paper on how reinforced concrete corner joints behave under blast loading and how the U.S. Department of Defense design manual treats them.</dd></div>
+      <div><dt>Problem</dt><dd>UFC 3-340-02 says special corner reinforcement should be provided but gives no quantitative rules, while tests show joint detailing decides whether a corner reaches 32% or more than 100% of its theoretical capacity.</dd></div>
+      <div><dt>Solution</dt><dd>Reviewed experimental, analytical and finite-element studies from 1976 to 2021 and pulled out the rules they agree on: diagonal bars of at least half the main tension steel, inner haunches of about 4/9 of member thickness, confinement where steel ratios exceed 0.5%, and plastic hinges relocated away from the support face. Turned these into a design procedure and draft provisions in the manual's own format.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>UFC 3-340-02</li><li>Blast design</li><li>RC detailing</li><li>Literature review</li></ul>
+      <a class="doc" href="files/ces6588-blast-resistant-corner-joints.pdf" data-doc>Paper (29 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="rcframe" data-cat="structural">
+  <div class="no" aria-hidden="true">07</div>
+  <div class="figs"><a class="fig" href="img/frame_rc.jpg"><img src="img/frame_rc.jpg" alt="Shear and moment diagrams for a frame element" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CES 6706 · Advanced reinforced concrete <i>/</i> Team of 3</p>
+    <h2>Reinforced concrete rigid frame: analysis and design</h2>
+    <p class="xyz"><span class="lbl">Result</span>Designed a reinforced concrete rigid frame to ACI 318-25 for <b>two lateral load cases</b>, with every member and joint checked against factored demand, by writing <b>three MATLAB programs</b> for direct-stiffness analysis, column interaction diagrams and beam design.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>Complete analysis and design of a single-bay, pinned-base concrete frame (20 ft girder, 11 ft columns) under factored gravity and lateral loads.</dd></div>
+      <div><dt>Problem</dt><dd>Find the axial, shear and moment demands with finite joint sizes accounted for, then provide flexural, shear and joint reinforcement that satisfies the code for both directions of lateral load.</dd></div>
+      <div><dt>Solution</dt><dd>Wrote a stiffness-method solver with rigid end offsets to get member forces, generated column interaction diagrams, and designed the sections: 2 No. 8 bars top and bottom in the 12 x 20 in. girder, 4 No. 8 bars in the 12 x 14 in. columns, No. 3 stirrups, and No. 3 closed hoops at 6 in. in the joints per ACI 352.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>MATLAB</li><li>ACI 318-25</li><li>ACI 352</li><li>Stiffness method</li></ul>
+      <a class="doc" href="files/ces6706-rc-frame-design.pdf" data-doc>Report (52 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="schedule" data-cat="construction">
+  <div class="no" aria-hidden="true">08</div>
+  <div class="figs"><a class="fig" href="img/sched.jpg"><img src="img/sched.jpg" alt="Gantt charts for the demolition and sitework phases" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CCE 5035 · Construction planning and scheduling <i>/</i> Fall 2023 <i>/</i> Team of 4</p>
+    <h2>Career Resource Center: construction schedule and bid</h2>
+    <p class="xyz"><span class="lbl">Result</span>Built a <b>211-calendar-day</b> schedule and a <b>$7.92M</b> guaranteed maximum price for a campus building with a $10M budget, planning around a <b>15-day</b> utility delay while keeping the July 31 deadline, by sequencing seven phases in Primavera P6 and crashing activities to recover 28 work days at no added cost.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A bid proposal for the University of Florida Career Resource Center, an expansion of the Reitz Student Union, covering work breakdown, activities, resources, costs and progress monitoring.</dd></div>
+      <div><dt>Problem</dt><dd>The owner wanted an accelerated schedule with a fixed end date and a $1,000 per day late penalty, and a power line relocation was expected to run 15 days late.</dd></div>
+      <div><dt>Solution</dt><dd>Broke the work into seven phases with durations, costs and predecessors, found the critical path for the project and each phase in P6, drew precedence diagrams, allocated resources and periodic costs, and shortened activity durations where it cost nothing to do so.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Primavera P6</li><li>Critical path method</li><li>WBS</li><li>Cost loading</li></ul>
+      <a class="doc" href="files/cce5035-crc-schedule-bid.pdf" data-doc>Proposal (68 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="spsw" data-cat="structural">
+  <div class="no" aria-hidden="true">09</div>
+  <div class="figs"><div class="plate"><span class="big">4%</span><span class="cap">drift capacity of self-centering steel plate shear walls, against 2% for conventional walls</span></div></div>
+  <div class="head">
+    <p class="meta">CES 5607 · Behavior of steel structures <i>/</i> Spring 2025 <i>/</i> Co-author · team of 3</p>
+    <h2>Self-centering steel plate shear walls</h2>
+    <p class="xyz"><span class="lbl">Result</span>Reviewed self-centering steel plate shear walls, which tolerate up to <b>4% drift</b> (against 2% for conventional walls) with residual drift under <b>0.5%</b> in tests, and proposed design-code recommendations, by synthesizing experimental and numerical studies.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A state-of-the-art review of a seismic lateral system that adds post-tensioned rocking connections and replaceable web plates to the conventional steel plate shear wall.</dd></div>
+      <div><dt>Problem</dt><dd>Conventional walls are limited to about 2% story drift, put heavy demands on beams and columns, and are hard to repair after an earthquake. The self-centering version addresses this, but design codes do not yet cover it.</dd></div>
+      <div><dt>Solution</dt><dd>Explained the mechanics and design approach, summarized test and modeling results (boundary elements stay elastic, damage concentrates in bolted web plates), covered newer connections such as NewZ-BREAKSS, and listed what codes would need to address before the system can be widely used.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>AISC Seismic Provisions</li><li>Seismic design</li><li>Literature review</li></ul>
+      <a class="doc" href="files/ces5607-self-centering-spsw.pdf" data-doc>Report (14 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="wind" data-cat="coastal">
+  <div class="no" aria-hidden="true">10</div>
+  <div class="figs"><div class="plate"><span class="big">35%</span><span class="cap">loss of street-level wind speed ratio that an elevated walkway can cause</span></div></div>
+  <div class="head">
+    <p class="meta">CES 6585 · Wind engineering <i>/</i> Co-author · team of 3</p>
+    <h2>Elevated walkways and pedestrian-level wind comfort</h2>
+    <p class="xyz"><span class="lbl">Result</span>Proposed design guidelines for elevated walkways (width ratio of <b>0.4 or less</b>, overall mean velocity ratio above <b>0.3</b>) to limit street-level ventilation losses of up to <b>35%</b>, by synthesizing large eddy simulation and field studies of urban street canyons.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A conference-style paper on how elevated pedestrian walkways change wind conditions for people on the street below in dense cities.</dd></div>
+      <div><dt>Problem</dt><dd>Walkways block the street canyon and suppress vertical mixing, which lowers wind speeds at pedestrian level and lets heat and pollutants build up, especially in deep canyons and under wide decks.</dd></div>
+      <div><dt>Solution</dt><dd>Compared published simulations across canyon aspect ratios, walkway widths and wind angles, identified walkway width ratio as the driving parameter, and set out an assessment procedure and geometry limits tied to quantitative low-wind comfort criteria.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Pedestrian-level wind</li><li>CFD / LES studies</li><li>Comfort criteria</li></ul>
+      <a class="doc" href="files/ces6585-pedestrian-wind-comfort.pdf" data-doc>Paper (9 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="estimate" data-cat="construction">
+  <div class="no" aria-hidden="true">11</div>
+  <div class="figs"><a class="fig" href="img/memo.jpg"><img src="img/memo.jpg" alt="Opinion of probable cost table" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CGN 4160 · Construction engineering <i>/</i> Fall 2022 <i>/</i> Individual memo</p>
+    <h2>Soccer field complex: cost estimate and earthwork</h2>
+    <p class="xyz"><span class="lbl">Result</span>Estimated a probable construction cost of <b>$384,069</b> for a soccer field project and <b>446 loose cubic yards</b> of surplus soil to stockpile, by doing a division-by-division quantity takeoff priced with RS Means and working out shrink and swell on the earthwork.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A technical memorandum giving a developer an opinion of probable cost for a conceptual design with two concrete pads, sidewalks, a stormwater pond, an elevated grass field and a parking lot.</dd></div>
+      <div><dt>Problem</dt><dd>The client needed a budget figure to evaluate the design, and needed to know how much excavated pond soil would be left over to store on a neighboring site.</dd></div>
+      <div><dt>Solution</dt><dd>Took off concrete, earthwork, paving, seeding and special construction quantities, applied 2017 RS Means unit costs with general requirements, tax, overhead and profit, contingency, bonds and a location factor, and balanced pond excavation against embankment fill using frustum volumes and soil shrinkage and swell.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Quantity takeoff</li><li>RS Means</li><li>Earthwork balance</li></ul>
+      <a class="doc" href="files/cgn4160-cost-estimate-memo.pdf" data-doc>Memo (6 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="ftool" data-cat="structural">
+  <div class="no" aria-hidden="true">12</div>
+  <div class="figs"><a class="fig" href="img/ftool.jpg"><img src="img/ftool.jpg" alt="Ftool shear diagram and deflected shape of the frame" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CES 3102 · Structural analysis <i>/</i> Individual assignment</p>
+    <h2>Lateral systems compared: rigid, pinned and braced frames</h2>
+    <p class="xyz"><span class="lbl">Result</span>Showed that diagonal bracing cut the roof drift of a multi-story frame from <b>1.68 in. to 0.46 in.</b> (73%) and the peak moment from 139.0 to 33.5 kip-ft compared with rigid moment connections, by modeling three lateral systems in Ftool.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>A structural analysis of one frame under gravity and wind load with three ways of resisting lateral load: rigid connections, shear connections only, and a braced bay.</dd></div>
+      <div><dt>Problem</dt><dd>Determine which system keeps drift between floors under the 3/8 in. limit used to protect facades and partitions, and what each one costs in member forces.</dd></div>
+      <div><dt>Solution</dt><dd>Modeled each case and compared shear, moment and deflected shape. The rigid frame exceeded the drift limit, the pinned frame drifted 19.8 in. at the roof, and the braced frame passed. Doubling the brace section reduced roof drift further, to 0.29 in.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>Ftool</li><li>Frame analysis</li><li>Drift checks</li></ul>
+      <a class="doc" href="files/ces3102-frame-analysis.pdf" data-doc>Report (12 pp.) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+<article class="sheet" id="cad" data-cat="drafting">
+  <div class="no" aria-hidden="true">13</div>
+  <div class="figs"><a class="fig" href="img/cad3.jpg"><img src="img/cad3.jpg" alt="3-D isometric view of Weil Hall room 270" loading="lazy"></a><a class="fig small" href="img/cad1.jpg"><img src="img/cad1.jpg" alt="Location map and boundary of Weil Hall" loading="lazy"></a><a class="fig small" href="img/cad2.jpg"><img src="img/cad2.jpg" alt="Proposed floor plan of the 4th floor restroom" loading="lazy"></a></div>
+  <div class="head">
+    <p class="meta">CGN 2328 · Technical drawing and visualization <i>/</i> Fall 2021 <i>/</i> Individual projects</p>
+    <h2>AutoCAD drawing set: Weil Hall</h2>
+    <p class="xyz"><span class="lbl">Result</span>Produced a <b>nine-sheet</b> drawing set of an existing campus building across <b>three projects</b>, covering site, plan, elevation, detail and 3-D views, by drafting to scale in AutoCAD with title blocks, schedules and general notes.</p>
+  </div>
+  <div class="body">
+    <dl>
+      <div><dt>Project</dt><dd>Three drafting projects based on Weil Hall at the University of Florida: a location map and classroom seating plan, a restroom renovation, and a 3-D model of a classroom.</dd></div>
+      <div><dt>Problem</dt><dd>Communicate existing conditions and proposed changes clearly enough to build from, at the right scale and with standard sheet conventions.</dd></div>
+      <div><dt>Solution</dt><dd>Drew a location map with bearings and distances, a seating plan and chair detail for room 270, demolition and proposed plans for a 4th-floor restroom with wall and fixture schedules, interior elevations and partition details, and an isometric view with a section through the room.</dd></div>
+    </dl>
+    <div class="foot">
+      <ul class="tools"><li>AutoCAD</li><li>2-D drafting</li><li>3-D modeling</li></ul>
+      <a class="doc" href="files/cgn2328-autocad-drawing-set.pdf" data-doc>Drawings (9 sheets) <span aria-hidden="true">&rarr;</span></a>
+    </div>
+  </div>
+</article>
+</main>
+<footer class="wrap">Academic project work. Group projects list my role; the capstone firm was a simulated company created for the course.</footer>
+<script>
+(function(){
+  var btns=document.querySelectorAll('nav button'),sheets=document.querySelectorAll('.sheet');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.dataset.f;
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    sheets.forEach(function(s){s.hidden=!(f==='all'||s.dataset.cat.split(' ').indexOf(f)>-1)});
+  })});
+  // If a linked document is not hosted alongside the page, show that instead of a dead link.
+  document.querySelectorAll('a[data-doc]').forEach(function(a){
+    fetch(a.getAttribute('href'),{method:'HEAD'}).then(function(r){if(!r.ok)throw 0}).catch(function(){
+      a.classList.add('off');a.removeAttribute('href');a.textContent='Document in full site';
+    });
+  });
+})();
+</script>
+</body>
+</html>
